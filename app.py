@@ -14,7 +14,7 @@ def home():
     credential = DefaultAzureCredential()
     client = SecretClient(vault_url=vault_url, credential=credential)
     secret = client.get_secret("DbConnectionString")
-    return f"DB secret starts with: {secret.value[:5]}..."
+    return f"DB secret starts with: {secret.value[:15]}..."
 
 if __name__ == "__main__":
     app.run()
